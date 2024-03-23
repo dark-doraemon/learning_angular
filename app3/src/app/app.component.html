@@ -1,0 +1,21 @@
+<div class="container">
+    <p>
+        Đây là thẻ p
+    </p>
+    <div class="row">
+        <app-cockpit (svc)="getServerCreated($event)" (bpc)="getBlueprintCreated($event)"></app-cockpit>
+    </div>
+    <hr>
+    <div class="row">
+        <button class="btn btn-primary" (click)="onChangeFirst()">Change first server</button>
+        <button class="btn btn-danger" (click)="onDestroyFirst()">Delete First server</button>
+        <app-serverElement *ngFor="let serverElement of servers" [srv]="serverElement" [name]="serverElement.name">
+            <div class="panel-body" #contentParagraph>
+                <p>
+                    <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content}}</strong>
+                    <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+                </p>
+            </div>
+        </app-serverElement>
+    </div>
+</div>

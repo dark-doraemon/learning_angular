@@ -1,0 +1,14 @@
+<button (click)="onClick()">Display details</button>
+
+<p *ngIf="click">Secret password : tuna</p>
+
+<div *ngFor="let n of numArr;let i = index" 
+    [ngClass]="{
+        white : i >= 5
+    }"    
+    [ngStyle]="{
+        'backgroundColor' : i >=5 ? 'blue' : 'white'
+    }"
+>
+    {{n}}
+</div>

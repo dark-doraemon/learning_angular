@@ -5,7 +5,7 @@ import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@an
 })
 export class DropdownDirective {
 
-    //nếu true thì "open" thêm vào trong class của thể đang áp dụng directive
+    //nếu true thì "open" được  thêm vào trong class của thể đang áp dụng directive
     @HostBinding('class.open') isOpen = false;
 
     constructor(private elementRef : ElementRef,private renderer : Renderer2) {}
